@@ -34,7 +34,7 @@ final sliderArrayList = [
 class SliderViewModel extends BaseViewModel {
   final NavigationService _navigationService = locator<NavigationService>();
 
-  Future navigateToHome() async {
-    await _navigationService.navigateTo(Routes.homeViewRoute);
+  Future navigateToLoginScreen() async {
+    await _navigationService.navigateTo(Routes.loginviewRoute);
   }
 }

@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'slider_viewmodel.dart';
 
+
 class SliderLayoutView extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _SliderLayoutViewState();
@@ -107,7 +108,7 @@ class _SliderLayoutViewState extends State<SliderLayoutView> {
             )),
       );
   Widget buildSkipButton(model) => FlatButton(
-      onPressed: () => model.navigateToHome(),
+      onPressed: () => model.navigateToLoginScreen(),
       child: Text(Constants.SKIP,
           style: TextStyle(
             fontFamily: Constants.OPEN_SANS,

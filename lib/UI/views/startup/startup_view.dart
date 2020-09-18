@@ -19,3 +19,5 @@ class Startupview extends StatelessWidget {
         viewModelBuilder: () => StartupViewModel());
   }
 }
+
+ 
