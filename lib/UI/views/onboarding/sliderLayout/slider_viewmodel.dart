@@ -20,15 +20,16 @@ final sliderArrayList = [
   Slider(
       sliderImageUrl: 'assets/images/onboarding/welcome.png',
       sliderHeading: Constants.SLIDER_HEADING_1,
-      sliderSubHeading: Constants.SLIDER_DESC),
+      sliderSubHeading: Constants.SLIDER_DESC_1),
   Slider(
       sliderImageUrl: 'assets/images/onboarding/record.png',
       sliderHeading: Constants.SLIDER_HEADING_2,
-      sliderSubHeading: Constants.SLIDER_DESC),
+      sliderSubHeading: Constants.SLIDER_DESC_2),
   Slider(
       sliderImageUrl: 'assets/images/onboarding/collect.png',
       sliderHeading: Constants.SLIDER_HEADING_3,
-      sliderSubHeading: Constants.SLIDER_DESC),
+      sliderSubHeading: Constants.SLIDER_DESC_3),
+      
 ];
 
 class SliderViewModel extends BaseViewModel {

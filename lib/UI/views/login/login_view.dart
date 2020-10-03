@@ -1,14 +1,13 @@
+import 'package:PayMeBack/UI/views/dashboard/dashboard.dart';
 import 'package:PayMeBack/UI/views/home/home_view.dart';
+import 'package:PayMeBack/UI/views/startup/startup_view.dart';
+import 'package:PayMeBack/app/custom_route.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 
-import 'login_viewmodel.dart';
-import 'package:flutter/material.dart';
-import 'package:stacked/stacked.dart';
-
-
 const users = const {
+  'dribbble@gmail.com': '12345',
   'fred@gmail.com': '1234',
-  'hunter@gmail.com': 'hunter',
 };
 
 class LoginScreen extends StatelessWidget {
@@ -36,40 +35,21 @@ class LoginScreen extends StatelessWidget {
       return null;
     });
   }
+
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder.reactive(
-        builder: (context, model, child) => Scaffold(
-          body: flutterLogin(),
-        ),
-        viewModelBuilder: () => LoginViewModel());
-  }
-  Widget flutterLogin(){
     return FlutterLogin(
       title: '',
       logo: 'assets/images/logo.png',
       onLogin: _authUser,
       onSignup: _authUser,
-      onSubmitAnimationCompleted: (context) {
-        Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => HomeView(),
+      onSubmitAnimationCompleted: () {
+        Navigator.of(context).pushReplacement(FadePageRoute(
+          builder: (context) => Startupview(),
         ));
+        print('signed in');
       },
       onRecoverPassword: _recoverPassword,
-      messages: LoginMessages(
-        usernameHint: 'Username',
-        passwordHint: 'Pass',
-        confirmPasswordHint: 'Confirm',
-        loginButton: 'LOG IN',
-        signupButton: 'REGISTER',
-        forgotPasswordButton: 'Forgot huh?',
-        recoverPasswordButton: 'HELP ME',
-        goBackButton: 'GO BACK',
-        confirmPasswordError: 'Not match!',
-        recoverPasswordDescription:
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-        recoverPasswordSuccess: 'Password rescued successfully',
-      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'dart:io';
-
+import 'package:PayMeBack/UI/views/splash_screen/splash_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:PayMeBack/UI/views/home/home_view.dart';
 import 'package:PayMeBack/app/locator.dart';
 import 'package:PayMeBack/app/router.dart';
@@ -29,11 +30,12 @@ class MyApp extends StatelessWidget {
     ));
     return MaterialApp(
       title: '',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-         primarySwatch: Colors.blue,
-         platform: TargetPlatform.iOS,
+        primarySwatch: Colors.blue,
+        platform: TargetPlatform.iOS,
       ),
-      initialRoute: Routes.onboardingRoute,
+      initialRoute: Routes.splashScreenRoute,
       onGenerateRoute: Router.generateRoute,
       navigatorKey: locator<NavigationService>().navigatorKey,
     );
